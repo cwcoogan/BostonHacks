@@ -1,16 +1,19 @@
-"""
-Menu Function -- 
-
-Presents 3 options, like, dislike, super-like to the user
-
-Returns the value selected
-"""
+# globals for now, can change to local as needed.. 
 
 like = 1
 dislike = 2
 super_like = 3
 
 def menu(): 
+    """
+    FUNCTION -- Menu()
+
+    Parameter - Null
+
+    Returns -- user_choice int value of like/dislike/super-like
+
+    Notes -- We will need to alter this from L/D/S to the actual physical swipe value 
+    """
     user_choice = input("Welcome to Food Tinder:\nL: Like \nD: Dislike\n"
     "S: Super Like")     
     if user_choice.upper() == "L":
