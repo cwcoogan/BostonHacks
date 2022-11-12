@@ -1,10 +1,9 @@
 """
 Menu Function -- 
 
-Acts as the back-end functionality for liking/disliking food items
+Presents 3 options, like, dislike, super-like to the user
 
-Returns -- a list of liked/disliked food
-            if super-liked, returns the super-liked food item
+Returns the value selected
 """
 
 like = 1
@@ -22,7 +21,7 @@ def menu():
         return super_like
 menu()
 
-        
+     
 
 
 
