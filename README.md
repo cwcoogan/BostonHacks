@@ -2,7 +2,7 @@
 
 Repository to store BostonHacks.io project
 
-Team: Chase, Neel, Krishna
+Team: Chase, Neel, Krishna, Hamsini
 
 Project: Update as go
 
