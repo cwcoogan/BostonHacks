@@ -1,8 +1,6 @@
 # globals for now, can change to local as needed.. 
 
-like = 1
-dislike = 2
-super_like = 3
+
 
 def menu(): 
     """
@@ -14,6 +12,11 @@ def menu():
 
     Notes -- We will need to alter this from L/D/S to the actual physical swipe value 
     """
+
+    like = 1
+    dislike = 2
+    super_like = 3
+
     user_choice = input("Welcome to Food Tinder:\nL: Like \nD: Dislike\n"
     "S: Super Like")     
     if user_choice.upper() == "L":
