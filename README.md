@@ -1,4 +1,5 @@
 # BostonHacks
+i
 Repository to store BostonHacks.io project
 
 Team: Chase, Neel, Krishna
