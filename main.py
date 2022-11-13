@@ -36,7 +36,7 @@ class MainApp(App):
             size_hint = (0.5, 0.25),
             pos = (50, 20),
             pos_hint ={"center_x": 0.5, "center_y": 0.5}
-        )
+            )
         dislike_button.bind(on_press=self.callback)
         h_layout.add_widget(dislike_button)
         

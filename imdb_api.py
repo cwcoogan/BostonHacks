@@ -31,10 +31,10 @@ def get_data(genres_list):
         
     movies_dict = {}
     
-    for genre in genres_list[10:15]:
+    for genre in genres_list[7:17]:
         params = {
             "genre": genre,
-            "limit": "3",
+            "limit": "4",
             }
 
         response = requests.get(DATA_API_URL, headers=headers, params=params).json()
