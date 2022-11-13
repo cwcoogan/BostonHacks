@@ -14,7 +14,6 @@ preference = {
 }
 
 def menu():
-    i = 0
     temp_list = ["Frozen","dairy", "water", "Bread", "cheese","Frozen","dairy"]
     
     for j in temp_list:
@@ -27,12 +26,15 @@ def menu():
             preference['dislike'].append(j)
 
             if j in preference['like']:
-                preference['like'].remove(j)    
+                preference['like'].remove(j)  
+            
 
         elif user_choice.upper() == "S":
             preference['superlike'].append(j)
-        print(preference)
 
+            if j in preference['like']:
+                preference['like'].remove(j)
+        print(preference)
 
 menu()
 #print(preference)
