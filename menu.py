@@ -31,5 +31,6 @@ def menu(genres, user_choice):
 
             if j in preference['like']:
                 preference['like'].remove(j)
+                
     print(preference)
     return preference    

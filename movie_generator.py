@@ -12,9 +12,6 @@ def generate_dict(name, bio, genres):
         }
 
 def get_random_item(movies_dict): 
-    print("done")
-    # pprint(movies_dict)
-    
     i = random.randint(1, len(movies_dict))
     count = 0
     for each in movies_dict: 
