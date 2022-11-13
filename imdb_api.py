@@ -14,7 +14,7 @@ def get_data():
         }
 
     headers = {
-        "X-RapidAPI-Key": "5238b2b59bmsh2ca28605277e0b3p161ad3jsn4ab3133bcba9",
+        "X-RapidAPI-Key": "fb782b666bmshee37d9a8f85f31dp14f7d8jsn450ad4ef36f0",
         "X-RapidAPI-Host": "imdb8.p.rapidapi.com"
     }
 
