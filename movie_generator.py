@@ -1,8 +1,9 @@
 import random
 from pprint import pprint
 from imdb_api import *
+from temp_movie_dict import *
 
-movies_dict = get_data()
+# movies_dict = get_data()
 
 def generate_dict(name, bio, genres):
     return {
