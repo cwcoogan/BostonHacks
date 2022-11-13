@@ -7,6 +7,9 @@
 
     Notes -- We will need to alter this from L/D/S to the actual physical swipe value 
 """
+
+from movies import *
+
 preference = {
     'like':[],
     'dislike':[],
@@ -22,6 +25,7 @@ def menu():
         if user_choice.upper() == "L" and j not in preference['like']:
             preference['like'].append(j)
 
+
         elif user_choice.upper() == "D" and j not in preference['dislike']:
             preference['dislike'].append(j)
 
@@ -34,5 +38,6 @@ def menu():
             if j in preference['like']:
                 preference['like'].remove(j)
         print(preference)
+        
 menu()
     
