@@ -7,20 +7,14 @@
 
     Notes -- We will need to alter this from L/D/S to the actual physical swipe value 
 """
-
-from movies import *
-
-preference = {
-    'like':[],
-    'dislike':[],
-    'superlike':[]
-}
-
-def menu():
-    temp_list = ["Frozen","dairy", "water", "Bread", "cheese","Frozen","dairy"]
+def menu(genres, user_choice):
+    preference = {
+        'like':[],
+        'dislike':[],
+        'superlike':[]
+    }
     
-    for j in temp_list:
-        user_choice = input(f"Welcome to Food Tinder:\nL: Like \nD: Dislike\nS: Super Like\nFood choice is: {j}\n")   
+    for j in genres:
     
         if user_choice.upper() == "L" and j not in preference['like']:
             preference['like'].append(j)
@@ -37,7 +31,5 @@ def menu():
 
             if j in preference['like']:
                 preference['like'].remove(j)
-        print(preference)
-        
-menu()
-    
+    print(preference)
+    return preference    
