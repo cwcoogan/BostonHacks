@@ -25,16 +25,14 @@ def get_data():
 
     for movie in movie_responses:
         id = movie["id"][7:-1]
-        
-        # Do Image stuff
-        img_url = movie["image"]["url"]
-        with open("movie_image.jpg", 'wb') as file:
-            image = requests.get(img_url).content
-            file.write(image)
             
         if "title" not in movie: continue
         
         movies_dict[id] = {}
+
+        # Do image add
+        movies_dict[id]["img"] = movie["image"]["url"]
+
         movies_dict[id]["title"] = movie["title"]
         
         id_params = {"tconst": id}

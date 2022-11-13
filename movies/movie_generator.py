@@ -3,11 +3,10 @@ from pprint import pprint
 from imdb_api import *
 
 
-def generate_dict(name, bio, img_file, genres):
+def generate_dict(name, bio, genres):
     return {
         "name": name, 
         "bio" : bio, 
-        "img_file": img_file,
         "genres" : genres
         }
 
@@ -32,9 +31,10 @@ def get_single_item():
     bio = movie["bio"]
     genres = movie["genres"]
 
-    img = "movie_image.jpg"
+    img_url = movie["img"]
+    with open("movie_image.jpg", 'wb') as file:
+        image = requests.get(img_url).content
+        file.write(image)
 
-    return generate_dict(name, bio, img, genres)
+    return generate_dict(name, bio, genres)
 
-item = get_single_item()
-print(item)
