@@ -20,15 +20,20 @@ def menu():
         return 3
 
 def check_like(category, like):
-    empty = []
-    preference = ({"like": {category}, "dislike":{category}})   
-    if like == 1:
-        if category in preference[1]:
-            category.pop(1)
-            empty.append(category) 
-            preference['like'] = empty
+    temp = [] # empty list to store item that will be removed from 
+    super_list = [] # list to store value of super_Liked item
     
-
-
-     
+    preference = {"like": [category], "dislike":[category]} # dictionary to fill  
+    if like == 1 and like not in  category: # if user selects LIKE & item is NOT in dict THEN append
+        preference['like'] = like
+    if like == 1 and like in category:
+        pass # needs to Continue 
+    if like == 2:
+        preference.pop(preference[like])
+        temp.append(category)
+    if like == 3:
+        super_list.append(like)
+    
+menu()
+check_like('food', None)
     
