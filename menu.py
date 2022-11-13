@@ -28,14 +28,11 @@ def menu():
             if j in preference['like']:
                 preference['like'].remove(j)  
             
-
         elif user_choice.upper() == "S":
             preference['superlike'].append(j)
 
             if j in preference['like']:
                 preference['like'].remove(j)
         print(preference)
-
 menu()
-#print(preference)
     
