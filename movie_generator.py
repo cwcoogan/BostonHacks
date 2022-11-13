@@ -32,12 +32,7 @@ def get_single_item():
     bio = movie["bio"]
     genres = movie["genres"]
 
-    
-    # # TODO: Add Image
-    # img = item["images"][0]["sizes"][4]["url"]
-    # image_file = create_image_file(img)
-    
-    img = "test.jpg"
+    img = "movie_image.jpg"
 
     return generate_dict(name, bio, img, genres)
 
