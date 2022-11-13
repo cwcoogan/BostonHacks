@@ -1,8 +1,0 @@
-Kroger API client id/secret:
-
-kroger_api_url = https://api.kroger.com/v1/products
-kroger_api_non_auth_url = https://api.kroger.com/v1/connect/oauth2/token
-
-
-client_id = buhacks-e20679a4aed8e34b995e81b96c9e35a8922492763737126773
-client_secret = buhacks-e20679a4aed8e34b995e81b96c9e35a8922492763737126773
