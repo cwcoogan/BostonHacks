@@ -5,9 +5,12 @@ from kivy.uix.button import Button
 from kivy.uix.textinput import TextInput
 from kivy.uix.image import Image
 
+import api_methods
+
 class MainApp(App):
     def build(self):
         self.icon = "food.png"
+        self.data = api_methods.get_single_item()
         #self.operators = ["constructor elements go here"]
         #self.last_was_operator = None
         #self.last_button = None
