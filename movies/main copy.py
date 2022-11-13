@@ -5,12 +5,12 @@ from kivy.uix.button import Button
 from kivy.uix.textinput import TextInput
 from kivy.uix.image import Image
 
-import api_methods
+import movie_generator
 
 class MainApp(App):
     def build(self):
         self.icon = "food.png"
-        self.data = api_methods.get_single_item()
+        self.data = movie_generator.get_single_item()
         #self.operators = ["constructor elements go here"]
         #self.last_was_operator = None
         #self.last_button = None
@@ -35,8 +35,7 @@ class MainApp(App):
         dislike_button.bind(on_press=self.on_dislike_button_press)
         h_layout.add_widget(dislike_button)
         self.food_image = Image(
-            source = self.data["img_file"],
-            width = 10000
+            source = self.data["../movie_image.jpg"],
         )
         h_layout.add_widget(self.food_image)
         like_button = Button(
