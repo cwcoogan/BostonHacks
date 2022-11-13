@@ -5,7 +5,7 @@ TOKEN = "eyJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vYXBpLmtyb2dlci5jb20vdjEvLndlbGw
 
 START_TERMS = ["food", "ice cream", "chips", "milk", "dairy", "cleaning"]
 
-PRODUCT_URL = f"https://api.kroger.com/v1/products"   
+PRODUCT_URL = "https://api.kroger.com/v1/products"   
 
 
 def generate_dict(name, bio, img_file, categories):
@@ -48,10 +48,14 @@ def get_single_item():
     name = item["description"]
     bio = "This is a default bio"
     categories = item["categories"].append(item["brand"])
-    img = item["image"]
+    
+    # TODO: Add Image
+    img = "test.jpg"
 
     return generate_dict(name, bio, img, categories)
 
+
+print(get_single_item())
 '''
 Call get_single_item() in main
 Requires no parameter
