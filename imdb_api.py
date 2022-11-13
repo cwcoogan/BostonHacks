@@ -5,7 +5,7 @@ from main import *
 
 # API Access data
 headers = {
-        "X-RapidAPI-Key": "9e07ffe2d7msh9f15e71ba279840p1311b5jsn533634d6ad40",
+        "X-RapidAPI-Key": "0467302745msh4bd8bcf8754db9dp13de26jsn0883070d9ac3",
         "X-RapidAPI-Host": "imdb8.p.rapidapi.com"
     }
 
@@ -30,17 +30,16 @@ def get_data(genres_list):
         genres_list = DEFAULT_GENRES
         
     movies_dict = {}
-    
-    for genre in genres_list[7:17]:
+    print("Loading App Now...")
+    for genre in genres_list[7:10]:
         params = {
             "genre": genre,
             "limit": "4",
             }
 
         response = requests.get(DATA_API_URL, headers=headers, params=params).json()
-        pprint(response)
+        
         for each in response:
-            print(each)
             id = each[7:-1]
             id_params = {
                 "tconst": id
