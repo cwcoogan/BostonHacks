@@ -39,7 +39,7 @@ class MainApp(App):
         h_layout.add_widget(dislike_button)
         
         # Image
-        self.movie_image = Image(source = self.data["name"])
+        self.movie_image = Image(source = self.data["name"]+ ".jpg")
         h_layout.add_widget(self.movie_image)
         
         like_button = Button(
@@ -69,7 +69,7 @@ class MainApp(App):
         self.data = movie_generator.get_single_item()
         
         # Change the details of movie
-        self.movie_image.source = self.data["name"]
+        self.movie_image.source = self.data["name"] + ".jpg"
         self.movie_bio.text = self.data["bio"]
         self.movie_name.text = self.data["name"]
         self.genres = self.data["genres"]
