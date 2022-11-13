@@ -16,6 +16,15 @@ class MainApp(App):
         #self.last_button = None
         main_layout = BoxLayout(orientation = "vertical")
 
+        super_like_button = Button(
+            text = ":D", font_size = 30, background_color = "yellow",
+            size_hint = (0.5, 0.25),
+            pos = (50, 20),
+            pos_hint ={"center_x": 0.5, "center_y": 0.5}
+        )
+        super_like_button.bind(on_press=self.on_super_like_button_press)
+        main_layout.add_widget(super_like_button)
+
         h_layout = BoxLayout()
         dislike_button = Button(
             text = ":(", font_size = 30, background_color = "red",
@@ -23,10 +32,11 @@ class MainApp(App):
             pos = (50, 20),
             pos_hint ={"center_x": 0.5, "center_y": 0.5}
         )
-        #dislike_button.bind(on_press=self.on_dislike_button_press)
+        dislike_button.bind(on_press=self.on_dislike_button_press)
         h_layout.add_widget(dislike_button)
         self.food_image = Image(
-            source = "food.png"
+            source = self.data["img_file"],
+            width = 10000
         )
         h_layout.add_widget(self.food_image)
         like_button = Button(
@@ -35,13 +45,13 @@ class MainApp(App):
             pos = (50, 20),
             pos_hint ={"center_x": 0.5, "center_y": 0.5}
         )
-        #like_button.bind(on_press=self.on_like_button_press)
+        like_button.bind(on_press=self.on_like_button_press)
         h_layout.add_widget(like_button)
         main_layout.add_widget(h_layout)
         
-        self.food_name = Label(text="food name goes here")
+        self.food_name = Label(text=self.data["name"])
         main_layout.add_widget(self.food_name)
-        self.food_bio = Label(text="food bio goes here")
+        self.food_bio = Label(text=self.data["bio"])
         main_layout.add_widget(self.food_bio)
         
 
@@ -98,6 +108,9 @@ class MainApp(App):
         pass # add the category to the liked list and update the self.food_image, name, bio
 
     def on_dislike_button_press(self, instance):
+        pass # add the category to the disliked list and update the self.food_image, name, bio
+
+    def on_super_like_button_press(self, instance):
         pass # add the category to the disliked list and update the self.food_image, name, bio
 
 
