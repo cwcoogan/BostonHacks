@@ -5,11 +5,12 @@ from temp_movie_dict import *
 
 # movies_dict = get_data()
 
-def generate_dict(name, bio, genres):
+def generate_dict(name, bio, id, genres):
     return {
         "name": name, 
         "bio" : bio, 
-        "genres" : genres
+        "genres" : genres,
+        "id" : id
         }
 
 def get_random_item(movies_dict): 
@@ -21,16 +22,17 @@ def get_random_item(movies_dict):
             count += 1
     return movies_dict[key]
     
-def get_single_item():
+def get_single_item(movies_dict):
 
     movie = get_random_item(movies_dict)
     name = movie["title"]
     bio = movie["bio"]
     genres = movie["genres"]
+    id = movie["id"]
 
     img_url = movie["img"]
     with open(name + '.jpg', 'wb') as file:
         image = requests.get(img_url).content
         file.write(image)
 
-    return generate_dict(name, bio, genres)
+    return generate_dict(name, bio, id, genres)

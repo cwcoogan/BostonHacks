@@ -6,16 +6,18 @@ from kivy.uix.textinput import TextInput
 from kivy.uix.image import Image
 
 import movie_generator
+import imdb_api
 from menu import *
 
 class MainApp(App):
     def build(self):
-        
-        # Build Values
-        self.data = movie_generator.get_single_item()
-        main_layout = BoxLayout(orientation = "vertical")
+                
         self.preferences = {}
+        self.movies_dict = imdb_api.get_data(self.preferences)
+        self.data = movie_generator.get_single_item(self.movies_dict)
+        main_layout = BoxLayout(orientation = "vertical")
         self.genres = self.data["genres"]
+        self.id = self.data["id"]
         
         # Make the 3 buttons
         super_like_button = Button(
@@ -66,7 +68,7 @@ class MainApp(App):
     def callback(self, instance=None):
         
         # Get a random data again
-        self.data = movie_generator.get_single_item()
+        self.data = movie_generator.get_single_item(self.movies_dict)
         
         # Change the details of movie
         self.movie_image.source = self.data["name"] + ".jpg"
@@ -82,9 +84,15 @@ class MainApp(App):
             self.preferences = menu(self.genres, 'D')
             
         elif instance.text == ":D": 
-            self.preferences = menu(self.genres, 'S')        
+            self.preferences = menu(self.genres, 'S')
+        
+        print(self.preferences) 
+        # print(self.movies_dict) 
+        # _ = self.movies_dict.pop(self.id)
+                  
 
 if __name__ == '__main__':
     app = MainApp()
     app.run()
+    
     

@@ -11,7 +11,6 @@ def menu(genres, user_choice):
     preference = {
         'like':[],
         'dislike':[],
-        'superlike':[]
     }
     
     for j in genres:
@@ -26,11 +25,12 @@ def menu(genres, user_choice):
             if j in preference['like']:
                 preference['like'].remove(j)  
             
+        # If it is super like, then it adds 2 instances of the
+        # genre in the likes so it is more 
+        # likely to get picked
         elif user_choice.upper() == "S":
-            preference['superlike'].append(j)
-
-            if j in preference['like']:
-                preference['like'].remove(j)
+            if j not in preference['like']:
+                preference['like'].append(j)
+            preference['like'].append(j)
                 
-    print(preference)
     return preference    
