@@ -8,12 +8,15 @@ from kivy.config import Config
 from kivy.core.window import Window
 from kivy.core.window import Window
 
-
-
-
 import movie_generator
 import imdb_api
 from menu import *
+
+from twilio.rest import Client
+
+account_sid = 'ACc054cafc9632fa3b8b64a3ceccae7e9d'
+auth_token = '4548c4868a0a963ea8e3e4864aecb2d8'
+client = Client(account_sid, auth_token)
 
 class MainApp(App):
     def build(self):
@@ -110,6 +113,15 @@ class MainApp(App):
             
         elif instance.text == ":D": 
             self.preferences = menu(self.genres, 'S')
+            message = client.messages.create(  
+                              messaging_service_sid='MG0271c0c4f3007cdd3e6be50275e0655a', 
+                              body='Hello, MyFlix here! Here is the full name of the movie you ' 
+                              + 'super liked for easy access in case you want to stream it: :) \nmovie name: ' 
+                              + self.movie_name.text + '. \nHappy movie watching!',      
+                              to='+16099214505' 
+                          )
+            print(message.sid)
+
         
         print(self.preferences) 
 
