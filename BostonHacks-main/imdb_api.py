@@ -5,7 +5,7 @@ from main import *
 
 # API Access data
 headers = {
-        "X-RapidAPI-Key": "0467302745msh4bd8bcf8754db9dp13de26jsn0883070d9ac3",
+        "X-RapidAPI-Key": "8c29fa2a63msh7c924980b5cd447p18b98ajsn86dc487db5df",
         "X-RapidAPI-Host": "imdb8.p.rapidapi.com"
     }
 

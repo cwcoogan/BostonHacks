@@ -27,42 +27,40 @@ class MainApp(App):
         
         # Image
         self.movie_image = Image(
-            source = self.data["name"]+ ".jpg",
-            size_hint_y = None,
-            allow_stretch = True,
-            keep_ratio = True,
-            width = 500,
-            height = 1100
+            source = self.data["name"]+ ".jpg"#,
+            #keep_ratio = True,
+            #width = 500,
+            #height = 1100
             )
         main_layout.add_widget(self.movie_image)
         
         # Make the 3 buttons    
         h_layout = BoxLayout()
         dislike_button = Button(
-            text = ":(", font_size = 48, background_color = "red",
+            text = ":(", font_size = 24, background_color = "red",
             bold = True,
-            size_hint = (0.5, 0.8),
-            pos = (50, 20),
+            #size_hint = (0.5, 0.8),
+            #pos = (50, 20),
             pos_hint ={"center_x": 0.5, "center_y": 0.5}
             )
         dislike_button.bind(on_press=self.callback)
         h_layout.add_widget(dislike_button)
         
         super_like_button = Button(
-            text = ":D", font_size = 48, background_color = "yellow",
+            text = ":D", font_size = 24, background_color = "yellow",
             bold = True,
-            size_hint = (0.5, 0.8),
-            pos = (50, 20),
+            #size_hint = (0.5, 0.8),
+            #pos = (50, 20),
             pos_hint ={"center_x": 0.5, "center_y": 0.5}
         )
         super_like_button.bind(on_press=self.callback)
         h_layout.add_widget(super_like_button)
         
         like_button = Button(
-            text = ":)", font_size = 48, background_color = "green",
+            text = ":)", font_size = 24, background_color = "green",
             bold = True,
-            size_hint = (0.5, 0.8),
-            pos = (50, 20),
+            #size_hint = (0.5, 0.8),
+            #pos = (50, 20),
             pos_hint ={"center_x": 0.5, "center_y": 0.5}
         )
         like_button.bind(on_press=self.callback)
@@ -74,8 +72,8 @@ class MainApp(App):
         self.movie_name = Label(
             text=self.data["name"],
             # color = "black",
-            size_hint_y = None,
-            font_size = 48,
+            #size_hint_y = None,
+            font_size = 24,
             bold = True
             )
         main_layout.add_widget(self.movie_name)
@@ -83,8 +81,8 @@ class MainApp(App):
         self.movie_bio = Label(
             text='[i]'+self.data["bio"]+'[/i]',
             # color = "black",
-            size_hint_y = None,
-            font_size = 38,
+            #size_hint_y = None,
+            font_size = 16,
             markup = True
             )
         main_layout.add_widget(self.movie_bio)
